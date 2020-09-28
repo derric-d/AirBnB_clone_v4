@@ -16,13 +16,7 @@ header #api_status{
     position: absolute;
     right: 30px;
 }
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
+
 
 header .logo {
     background: url("../images/logo.png") no-repeat;
