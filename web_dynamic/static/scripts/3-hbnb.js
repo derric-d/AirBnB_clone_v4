@@ -30,7 +30,7 @@ $(function () {
     dataType: 'json',
     contentType: 'application/json',
     success: function (data) {
-      for (const place of data) {
+      for (const place of Object.values(data)) {
         $('section.places').append('<article>' + '<div class="title">' + `<h2>${place.name}</h2>` + `<div class='price_by_night'>$${place.price_by_night}</div>` + '</div>' + '<div class=\'information\'>' + `<div class='max_guest'>${place.max_guest} Guests</div>` + `<div class='number_rooms'>${place.number_rooms} Bedrooms</div>` + `<div class='number_bathrooms'>${place.number_bathrooms} Bathrooms</div>` + '</div>' + `<div class='description'>${place.description}</div>` + '</article>');
       }
     }
