@@ -54,6 +54,18 @@ Classes inherited from Base Model:
 * [state.py](/models/state.py)
 * [user.py](/models/user.py)
 
+## AirBnB Web Dynamic
+This section of the project, we focused on serving content dynamically using Jquery,
+which serves to templates dynamically rendered in flask.
+We used what we learned about javascript and web development to build a dynamic front end.
+
+### `web_dynamic/` directory contains all dynamically served content:
+[templates](/web_dynamic/templates/) - Templates for web pages
+
+[scripts](web_dynamic/static/scripts/) - JQuery scripts for the templates
+
+[web_dynamic/](web_dynamic) - .py files are start various flask instances, each serving slightly different version of the Airbnb Clone
+
 #### `/models/engine` directory contains File Storage class that handles JASON serialization and deserialization :
 [file_storage.py](/models/engine/file_storage.py) - serializes instances to a JSON file & deserializes back to instances
 * `def all(self)` - returns the dictionary __objects
@@ -158,6 +170,10 @@ Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twit
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)  
 Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter.com/JhoanZamora10)  
 David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)
+
+Daniel So - [Github](https://github.com/djso89)
+
+Derric Donehoo - [Github](https://github.com/derric-d)
 
 Second part of Airbnb: Joann Vuong
 ## License
