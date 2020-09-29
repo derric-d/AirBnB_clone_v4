@@ -17,7 +17,7 @@ $(document).ready(function () {
       }
     });
 
-  $.get('http://0.0.0.0:5001/api/v1/status/', function (data, stat) {
+  $.get('http://localhost:5001/api/v1/status/', function (data, stat) {
     if (stat === 'success') {
       if (data.status === 'OK') {
         $('#api_status').addClass('available');
@@ -28,12 +28,12 @@ $(document).ready(function () {
   });
 
   $.ajax({
-    url : 'http://0.0.0.0:5001/api/v1/places_search',
+    url: 'http://localhost:5001/api/v1/places_search',
     type: 'POST',
     data: '{}',
     dataType: 'json',
     contentType: 'application/json',
-    success: function(data) {
+    success: function (data) {
       for (const place of data) {
         $('section.places').append('<article>' + '<div class="title">' + `<h2>${place.name}</h2>` + `<div class='price_by_night'>$${place.price_by_night}</div>` + '</div>' + '<div class=\'information\'>' + `<div class='max_guest'>${place.max_guest} Guests</div>` + `<div class='number_rooms'>${place.number_rooms} Bedrooms</div>` + `<div class='number_bathrooms'>${place.number_bathrooms} Bathrooms</div>` + '</div>' + `<div class='description'>${place.description}</div>` + '</article>');
       }
@@ -41,7 +41,7 @@ $(document).ready(function () {
   });
 
   $('button').click(function () {
-    console.log("clicked");
+    console.log('clicked');
     $.ajax({
       url: 'http://localhost:5001/api/v1/places_search/',
       type: 'POST',
@@ -50,10 +50,10 @@ $(document).ready(function () {
         amenities: Object.keys(amendict)
       }),
       success: function (data) {
-	$('article').remove();
+        $('article').remove();
         for (const place of Object.values(data)) {
-           console.log(place);
-           $('selection.places').append('<article>' + '<div class="title">' + `<h2>${place.name}</h2>` + `<div class='price_by_night'>$${place.price_by_night}</div>` + '</div>' + '<div class=\'information\'>' + `<div class='max_guest'>${place.max_guest} Guests</div>` + `<div class='number_rooms'>${place.number_rooms} Bedrooms</div>` + `<div class='number_bathrooms'>${place.number_bathrooms} Bathrooms</div>` + '</div>' + `<div class='description'>${place.description}</div>` + '</article>');
+          console.log(place);
+          $('section.places').append('<article>' + '<div class="title">' + `<h2>${place.name}</h2>` + `<div class='price_by_night'>$${place.price_by_night}</div>` + '</div>' + '<div class=\'information\'>' + `<div class='max_guest'>${place.max_guest} Guests</div>` + `<div class='number_rooms'>${place.number_rooms} Bedrooms</div>` + `<div class='number_bathrooms'>${place.number_bathrooms} Bathrooms</div>` + '</div>' + `<div class='description'>${place.description}</div>` + '</article>');
         }
       }
     });
